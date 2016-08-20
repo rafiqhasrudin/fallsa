@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+<script src="jquery-1.12.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<style>
+tab1 { padding-left: 5em; }
+</style>
+<body style="background-color:#77dd77;"> 
+
+
+<h2><font color="red" size="5">QUESTION</h2>
+Please answer the question. <br><br>
+	
+<form action="result.html">
+		<table bgcolor="#fffff" width="200" border="3" cellspacing="4" cellpadding="4">
+			<tr>
+			  <td align="right"><span class="style29">Worried of Falling:</span></td>
+			  <td><input type="radio" name="worry" id ="worryY" value="1">Yes
+			  <input type="radio" name="worry" id = "worryN" value="0">No</td>
+			</tr>
+			<tr>
+			  <td align="right"><span class="style29">I had fall in the past 18 months:</span></td>
+			  <td><input type="radio" name="fall" id ="worryY" value="1">Yes
+			  <input type="radio" name="fall" id = "worryN" value="0">No</td>
+
+			</tr>    
+			<tr>
+			  <td align="right"><span class="style29">Joint Pain:</span></td>
+			  <td><input type="radio" name="joint" id ="worryY" value="1">Yes
+			  <input type="radio" name="joint" id = "worryN" value="0">No</td>
+
+			</tr>    
+			<tr>
+			  <td align="right"><span class="style29">Having cataract/glaucoma:</span></td>
+			  <td><input type="radio" name="cataract/glaucoma" id ="worryY" value="1">Yes
+			  <input type="radio" name="cataract/glaucoma" id = "worryN" value="0">No</td>
+
+			</tr>
+			<tr>
+			  <td>&nbsp;</td>
+			<td>
+				<form action = "result.html">
+				<button id="btnCalculate" type="submit" style="background-color:transparent; border-color:transparent;"> 
+				<img src="img/right.png" height="60"/>
+				</button>
+				</form>
+			</td>
+			</tr>
+		  </table>
+
+</form>
+<script>
+$( '#btnCalculate' ).click( function () {
+	
+  var sum = 0;
+  
+  $( ':input:checked' ).each( function ( i, e ) {
+  	sum += parseInt( e.value );
+  });
+  
+  alert( "Total checked value is : " + sum );
+  
+});
+
+</script>
+
+
+</body>
+</html>

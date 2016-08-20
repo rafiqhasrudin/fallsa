@@ -1,0 +1,50 @@
+<html>
+<title>FallSA</title>
+<head>
+<style>
+img {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+</head>
+
+<body style="background-color:#77dd77;">
+<h3> <font color = "red"> Audio Instruction</font> </h3>
+
+			<audio controls>
+			<source src="audio/horse.ogg" type="audio/ogg">
+			<source src="audio/instruction.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+			<br>
+			
+ <table width="310" border="2" cellspacing="2" cellpadding="2">
+    <tr>
+      <td>		
+		<font size="4px"> 
+				1. Get an arm chair and a measuring tape<br>
+				2. Measure and mark a 3 meters walkway.<br>
+				3. Wear regular footwear and use your<br>walking aid (if already using one).<br>
+				4. Start the red button timer,<br>when you are getting up from the chair.<br>
+				5. Carry the phone while walking.<br>
+				6. Walk in a comfortable and safe<br>walking speed.<br>
+				7. Turn around at the line,<br>walk back the chair and sit down.<br>
+				8. Stop the red button<br>timer when your buttock touch the seat.<br>
+	  </td>
+    </tr>
+  </table> 
+  
+<script>
+	var audio = document.getElementById("myAudio");
+
+	function playAudio() {
+		audio.play();
+	}
+
+	function pauseAudio() {
+		audio.pause();
+	}
+</script>
+</body>
+</html>

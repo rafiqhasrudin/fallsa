@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head> Stopwatch </head>
+<body style="background-color:#77dd77;">
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script>
+
+// JavaScript Document
+var time = 0;
+var running = 0;
+
+function startPause(){
+	if(running == 0){
+		running = 1;
+		increment();
+		document.getElementById("startPause").innerHTML = "Pause";
+	}else{
+		running = 0;
+		document.getElementById("startPause").innerHTML = "Resume";
+		}
+}
+
+function reset(){
+	running = 0;
+	time = 0;
+	document.getElementById("startPause").innerHTML = "Start";
+	document.getElementById("output").innerHTML = "00:00:00";
+}
+
+
+function increment(){
+	if(running == 1){
+		setTimeout(function(){
+			time++;
+			var mins = Math.floor(time/10/60)%60;
+			var secs = Math.floor(time/10)%60;
+			var tenths = time%10;
+			
+			if(mins<10){
+				mins = "0" + mins;
+			}
+			if(secs<10){
+				secs = "0" + secs;
+			}
+			
+			document.getElementById("output").innerHTML = mins+ ":" +secs+ ":" + "0" +tenths;
+			increment(); 
+		},100);
+	}
+}
+
+calculate = function()
+{
+var time1 = document.getElementById('t1').value;
+var time2 = document.getElementById('t2').value; 
+var time3 = document.getElementById('t3').value;
+
+document.getElementById('ta').value = (parseInt(time1) + parseInt(time2) + parseInt(time3)) / 3;
+document.form1.submit();
+   }
+
+
+
+</script>
+
+
+<div id="container">
+	<p id="output"></p>
+    <div id="controls">
+
+    	<button class="button" id="startPause" onClick="startPause();">Start</button>
+		<button class="button" onClick="reset()">Reset</button>
+
+
+
+
+    </div>
+</div>
+
+
+ <table width="280" border="0" cellspacing="3" cellpadding="5">
+    <tr>
+		<td>	
+		<form action="">	
+			TIME 1:
+			  <input id="t1" type="text" name="TimeDisplayBox" size="3">seconds
+			  <input type="reset" name="Reset">	
+		 </form>	
+		</td>
+		<td>	
+		<form action="">
+			TIME 2:
+			  <input id="t2" type="text" name="TimeDisplayBox2" size="3">seconds
+			  <input type="reset" name="Reset">
+		</form>
+	 </td>
+	 	<td>	
+			<form action="">
+			TIME 3:
+			  <input id="t3" type="text" name="TimeDisplayBox3" size="3">seconds
+			  <input type="reset" name="Reset">
+			</form>
+		</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>		
+				Average:
+					  <input id ="ta" type="text" name="TimeDisplayBox4" size="3" value="" readonly>seconds
+					  <button onclick="calculate();">Average</button>			
+			</td>
+			<td></td>
+		</tr>	   
+ </table> 
+ 
+		<form action = "graph.html">
+			<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+			<img src="img/logo2.png" height="90"/>
+			</button>
+		</form>
+		GO TO GRAPH RESULT
+<script>
+
+ </script>
+ 
+</body>
+</html>
+

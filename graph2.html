@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title>Highcharts FallSA</title>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script src="http://code.highcharts.com/highcharts.js"></script>  
+</head>
+<body style="background-color:#77dd77;">
+<div id="container" style="width: 300px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(document).ready(function() {  
+   var chart = {
+      type: 'area',
+	  spacingBottom: 30
+   };
+   var title = {
+      text: 'Your personal physical performance test result comparing with population norms'   
+   }; 
+   var subtitle = {
+      text: 'AGE',
+      floating: true,
+      align: 'right',
+      verticalAlign: 'bottom',
+      y: 15
+   };
+   var legend = {
+      layout: 'vertical',
+      align: 'left',
+      verticalAlign: 'top',
+      x: 150,
+      y: 100,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+   };
+   var xAxis = {
+      categories: ['63', '67', '71', '76', '83']      
+   };
+   var yAxis = {
+      title: {
+         text: 'TUG(s)'
+      },
+      labels: {
+         formatter: function () {
+            return this.value;
+         }
+      }
+   };
+   var tooltip = {
+      formatter: function () {
+         return '<b>' + this.series.name + '</b><br/>' +
+            this.x + ': ' + this.y;
+      }
+   };
+   var plotOptions = {
+      area: {
+         fillOpacity: 0.5
+      }
+   };
+   var credits = {
+      enabled: false
+   };
+   var series= [ {
+            name: 'Male',
+            data: [9.8, 10.2, 10.6, 11.9, 13.1]
+      }
+   ];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title; 
+   json.subtitle = subtitle; 
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.legend = legend;
+   json.tooltip = tooltip;
+   json.plotOptions = plotOptions;
+   json.credits = credits;
+   json.series = series;
+   $('#container').highcharts(json);
+  
+});
+</script>
+
+
+		<form action = "question.html">
+			<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+			<img src="img/logo2.png" height="90"/>
+			</button>
+		</form>
+		NEXT TO QUESTION
+</body>
+</html>

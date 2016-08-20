@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:#77dd77;">
+
+
+<h2> PAST RESULT</h2>
+<canvas id="myCanvas" width="270" height="100"
+style="border:1px solid #000000;">
+</canvas>
+
+<?php
+error_reporting(0);
+include ("conn.php");
+?>
+
+
+
+<div id="container">
+<table border="0">
+<tr>
+<td valign="top">
+<?php 
+
+		 
+
+$get_h=mysql_query("select * from past");
+ 
+while($get=mysql_fetch_array($get_h))
+{
+		extract($get);
+		
+		  ?>
+<div class="span6 well">
+  <table width="270" border="1" cellspacing="2" cellpadding="1">
+  <tr><td colspan=5>Past Result Taken<?php echo $id;?></td></tr>
+   <tr>
+		<td>Name:<?php echo $name;?></td>
+		<td>RESULT:<?php echo $result;?></td>
+		<td>Date:<?php echo $date;?></td>
+
+   </tr>
+    
+  </table>
+</div><?php } ?></td><td valign="top">
+</td></tr></table>
+</div>
+
+
+		<form action = "index.html">
+			<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+			<img src="img/home.png" height="90"/>
+			</button>
+		</form>
+		
+</body>
+</html>

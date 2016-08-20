@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+
+<style>
+	
+</style>
+</head>
+
+
+<body style="background-color:#77dd77;"> 
+
+
+<h2>Personal Details</h2>
+
+<form action="pro_register_user.php" method="post">
+  <table width="280" border="0" cellspacing="2" cellpadding="2">
+    <tr>
+      <td>&nbsp;</td>
+      <td><span class="style38"> Please complete the fields below to register. </span></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td align="right"><span class="style29">Name:</span></td>
+      <td>
+          <input type="text" name="name" id="name" />      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">No IC:</span></td>
+      <td>
+          <input type="text" name="ic" id="ic" />      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">Gender:</span></td>
+      <td>
+          <input type="radio" name="gender" id ="female" value="female">Female
+			<input type="radio" name="gender" id = "male" value="male">Male		  </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">Date of Birth:</span></td>
+      <td>
+          
+		  <input id="dob" name="dob" min="190-01-01" max="2010-01-01" type="date">
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">Address:</span></td>
+      <td><input name="address" type="text" id="address" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">Contact No:</span></td>
+      <td><input name="contactno" type="text" id="contactno" /></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td align="right"><span class="style29">Email:</span></td>
+      <td><input type="text" name="email" id="email" /></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td align="right"><span class="style29">Education level:</span></td>
+      <td>  <select name="education">
+    <option value="noE">No Education</option>
+    <option value="primaryE">Primary Education</option>
+    <option value="secondaryE">Secondary Education</option>
+    <option value="tertiaryE">Tertiary Education</option>
+  </select><td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+		<td>	<input type="submit" name="Register" id="Register" value="REGISTER" onclick="myFunction()">
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+
+
+	<script>
+		function myFunction() {
+			alert("SUCCESS!");
+		}
+	</script>
+  </table></form>
+
+</body>
+</html>
